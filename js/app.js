@@ -1,4 +1,4 @@
-angular.module('TodoApp',['ngRoute','RouteControllers', 'UserService', 'angular-storage', 'TodoService', 'TodoDirective']);
+angular.module('TodoApp',['ngRoute','RouteControllers', 'UserService', 'angular-storage', 'TodoService', 'TodoDirective','navbarDirective']);
 
 angular.module('TodoApp').config(function($routeProvider)	{
 
@@ -18,5 +18,12 @@ angular.module('TodoApp').config(function($routeProvider)	{
 		templateUrl: 'templates/edit-todo.html',
 		controller: 'EditTodoController'
 	})
-
+	.when('/login', {
+		templateUrl: 'templates/login.html',
+		controller: 'LoginController'
+	})
+	.when('/logout', {
+		templateUrl: 'templates/loggedOut.html',
+		controller: 'LogoutController'
+	})
 });

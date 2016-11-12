@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+		<div class="navbar-header">
+ 			<a class="navbar-brand" href="#/">Angular Todo</a>
+ 		</div>
+ 		<ul class="nav navbar-nav navbar-right">
+ 			<li><a href="#/">Home</a></li>    			
+ 			<li class=""><a href="#/todo">Todo</a></li>
+ 			<li><a href="#/accounts/register">Account</a></li>
+      <li><a href={{loggedInStatusRoute}}>{{loggedInStatusName}}</a></li>
+      <li ng-show="{{username}}" class="ng-show"><a href="#">ng-show {{username}}</a>
+      <li></li>
+      <li><a>{{username}}</a></li>
+      <div id="user"></div>
+      <script>
+
+        // if(localStorage.authToken)  {
+        //   document.getElementById("loggedStatus").innerHTML = "<a href='#/logout'>Logout</a>";
+        //   document.getElementById("loggedInUser").innerHTML = "<a>User: {{username}}</a>";
+        // }else {
+        //   document.getElementById("logedStatus").innerHTML = "<a href='#/login'>Login</a>";
+        //   document.getElementById("loggedInUser").innerHTML = "";
+        // }     
+
+      </script>
+ 		</ul>
+ 	</div>
+</nav>
