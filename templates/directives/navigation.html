@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
+    <div class="container">
 		<div class="navbar-header">
  			<a class="navbar-brand" href="#/">Angular Todo</a>
  		</div>
@@ -7,12 +7,15 @@
  			<li><a href="#/">Home</a></li>    			
  			<li class=""><a href="#/todo">Todo</a></li>
  			<li><a href="#/accounts/register">Account</a></li>
-      <li><a href={{loggedInStatusRoute}}>{{loggedInStatusName}}</a></li>
-      <li ng-show="{{username}}" class="ng-show"><a href="#">ng-show {{username}}</a>
-      <li></li>
-      <li><a>{{username}}</a></li>
-      <div id="user"></div>
-      <script>
+            
+            
+            <li ng-show="username"><a href="#/logout">Logout {{username}}</a></li>
+            <li ng-hide="username"><a href="#/login">Login</a></li>
+
+        
+
+
+        <script>
 
         // if(localStorage.authToken)  {
         //   document.getElementById("loggedStatus").innerHTML = "<a href='#/logout'>Logout</a>";
@@ -22,7 +25,7 @@
         //   document.getElementById("loggedInUser").innerHTML = "";
         // }     
 
-      </script>
+        </script>
  		</ul>
  	</div>
 </nav>

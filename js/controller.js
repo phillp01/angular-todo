@@ -1,6 +1,8 @@
 angular.module('RouteControllers', [])
-	.controller('HomeController', function($scope)	{
+
+	.controller('HomeController', function($scope,store)	{
 		$scope.title = "Welcome To Angular Todo";
+		//$scope.username = store.get('username');
 	})
 	.controller('RegisterController', function($scope, $location, UserAPIService, store)	{
 
@@ -153,15 +155,15 @@ angular.module('RouteControllers', [])
 
 	.controller('NavbarController', function($scope, store)	{
 		
-		if (store.get('authToken'))	{
-			$scope.username = "User : " + store.get('username');
-			$scope.loggedInStatusRoute = "#/logout"	
-			$scope.loggedInStatusName = "Logout"
-		}else	{
-			$scope.username = "";
-			$scope.loggedInStatusRoute = "#/login"
-			$scope.loggedInStatusName = "Login"
-		}
+			if (store.get('authToken'))	{
+				$scope.username = store.get('username');
+				$scope.loggedInStatusRoute = "#/logout"	
+				$scope.loggedInStatusName = "Logout"
+				}else	{
+				$scope.username = "";
+				$scope.loggedInStatusRoute = "#/login"
+				$scope.loggedInStatusName = "Login"
+			}
 
 		
 	})
